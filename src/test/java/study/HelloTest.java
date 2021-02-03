@@ -30,8 +30,5 @@ public class HelloTest {
     public void 이름_나이_입력() {
         String name = "유형민";
         int age = 10;
-
-        mock.perform(jsonPath("")
-        .doesNotExist()                                                                   )
     }
 }

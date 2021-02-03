@@ -1,0 +1,44 @@
+buildscript {
+    // 전역 변수
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        // mavenCentral vs jcenter
+        // mavenCentral은 많은 라이브러리를 갖고 있음 단점은 직접 만든 라이브러리를 사용하기 번거로움
+        // jcenter은 직접 만든 라이브러리를 사용하기 쉬움
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.spring.boot'
+version '1.0-SNAPSHOT'
+//.java 컴파일 시 버전을 몇으로 할 것인지 나타냄
+sourceCompatibility = 1.8
+// targetCompatibility > VM 버전에 따라 .class파일을 생성
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // inner db
+    implementation 'com.h2database:h2'
+
+    // lombok dependency
+    implementation 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

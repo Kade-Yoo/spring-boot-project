@@ -1,14 +1,15 @@
 package study.domain.posts;
 
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Entity
 @Getter
 @NoArgsConstructor
-@Entity
 public class Posts {
 
     // 기본키 설정
@@ -33,3 +34,4 @@ public class Posts {
         this.author = author;
     }
 }
+

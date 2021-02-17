@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     // 기본키 설정
     // Identity 설정 시 자동 increment
@@ -32,6 +32,11 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
 

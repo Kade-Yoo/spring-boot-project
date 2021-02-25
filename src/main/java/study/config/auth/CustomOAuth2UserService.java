@@ -1,16 +1,20 @@
 package study.config.auth;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import study.domain.user.UserRepository;
+import study.config.auth.dto.SessionUser;
 import study.dto.User;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 
 @RequiredArgsConstructor
 @Service
@@ -39,7 +43,11 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         // 사용자 정보 DB저장
         User user = saveOrUpdate(attributes);
-        return null;
+        httpSession.setAttribute("user", new SessionUser(user));
+        return new DefaultOAuth2User(
+                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+                attributes.getAttributes(),
+                attributes.getNameAttributeKey());
     }
 
     private User saveOrUpdate(OAuthAttributes attributes) {

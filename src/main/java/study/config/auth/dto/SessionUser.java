@@ -1,10 +1,13 @@
 package study.config.auth.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 import study.dto.User;
 
 import java.io.Serializable;
 
+// 이 클래스에 직렬화를 하는 이유는?
+// => 세션을 저장하기 위한 클래스
 @Getter
 public class SessionUser implements Serializable {
     private String name;

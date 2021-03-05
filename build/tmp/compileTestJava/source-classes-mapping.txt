@@ -1,0 +1,8 @@
+study/web/PostsApiControllerTest.java
+ study.web.PostsApiControllerTest
+study/HelloTest.java
+ study.HelloTest
+study/domain/posts/PostsRepositoryTest.java
+ study.domain.posts.PostsRepositoryTest
+study/web/IndexControllerTest.java
+ study.web.IndexControllerTest

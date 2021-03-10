@@ -9,11 +9,11 @@ import study.config.interceptor.LoginInterceptor;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Autowired
-    LoginInterceptor loginInterceptor;
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginInterceptor);
-    }
+//    @Autowired
+//    LoginInterceptor loginInterceptor;
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(loginInterceptor);
+//    }
 }

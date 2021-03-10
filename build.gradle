@@ -16,6 +16,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -36,17 +37,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
+    implementation 'org.projectlombok:lombok:1.18.16'
+
     // lombok dependency
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    testImplementation('org.springframework.security:spring-security-test')
 
     // inner db
     compile('com.h2database:h2')
 
     // JDBC 설정
     compile('org.springframework.session:spring-session-jdbc')
-
-    runtime('org.springframework.boot:spring-boot-devtools')
 
     // Lombok 추가
     annotationProcessor("org.projectlombok:lombok")

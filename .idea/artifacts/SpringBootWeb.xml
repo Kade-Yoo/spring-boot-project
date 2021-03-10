@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringBootWeb">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringBootWeb</output-path>
+    <root id="archive" name="SpringBootWeb.war" />
+  </artifact>
+</component>

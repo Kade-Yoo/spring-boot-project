@@ -4,6 +4,8 @@ study/Application.java
  study.Application
 study/domain/posts/PostsRepository.java
  study.domain.posts.PostsRepository
+study/web/LoginUser.java
+ study.web.LoginUser
 study/web/dto/HelloResponseDto.java
  study.web.dto.HelloResponseDto
 study/domain/user/Role.java
@@ -17,9 +19,8 @@ study/config/interceptor/LoginInterceptor.java
 study/domain/posts/Posts.java
  study.domain.posts.Posts
  study.domain.posts.Posts$PostsBuilder
-study/web/dto/PostsSaveRequestDto.java
- study.web.dto.PostsSaveRequestDto
- study.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
+study/web/HelloController.java
+ study.web.HelloController
 study/service/posts/PostsService.java
  study.service.posts.PostsService
 study/controller/MustacheController.java
@@ -32,6 +33,8 @@ study/config/JpaConfig.java
  study.config.JpaConfig
 study/web/IndexController.java
  study.web.IndexController
+study/config/auth/LoginUserArgumentResolver.java
+ study.config.auth.LoginUserArgumentResolver
 study/web/dto/PostsUpdateRequestDto.java
  study.web.dto.PostsUpdateRequestDto
  study.web.dto.PostsUpdateRequestDto$PostsUpdateRequestDtoBuilder
@@ -51,5 +54,6 @@ study/dto/User.java
  study.dto.User$UserBuilder
 study/config/web/WebConfig.java
  study.config.web.WebConfig
-study/web/HelloController.java
- study.web.HelloController
+study/web/dto/PostsSaveRequestDto.java
+ study.web.dto.PostsSaveRequestDto
+ study.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder

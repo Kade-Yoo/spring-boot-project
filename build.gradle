@@ -39,6 +39,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
     implementation 'org.projectlombok:lombok:1.18.16'
 
+    implementation 'org.postgresql:postgresq:42.2.5'
+
     // lombok dependency
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 

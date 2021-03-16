@@ -11,7 +11,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import study.domain.user.UserRepository;
 import study.config.auth.dto.SessionUser;
-import study.dto.User;
+import study.dto.Users;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
@@ -42,21 +42,21 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
         // 사용자 정보 DB저장
-        User user = saveOrUpdate(attributes);
-        httpSession.setAttribute("user", new SessionUser(user));
+        Users users = saveOrUpdate(attributes);
+        httpSession.setAttribute("users", new SessionUser(users));
         return new DefaultOAuth2User(
-                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+                Collections.singleton(new SimpleGrantedAuthority(users.getRoleKey())),
                 attributes.getAttributes(),
                 attributes.getNameAttributeKey());
     }
 
-    private User saveOrUpdate(OAuthAttributes attributes) {
+    private Users saveOrUpdate(OAuthAttributes attributes) {
         // 사용자 정보 셋팅
-        User user = userRepository.findByEmail(attributes.getEmail())
+        Users users = userRepository.findByEmail(attributes.getEmail())
                     .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                     .orElse(attributes.toEntity());
 
         // DB저장
-        return userRepository.save(user);
+        return userRepository.save(users);
     }
 }

@@ -1,8 +1,7 @@
 package study.config.auth.dto;
 
 import lombok.Getter;
-import lombok.Setter;
-import study.dto.User;
+import study.dto.Users;
 
 import java.io.Serializable;
 
@@ -14,9 +13,9 @@ public class SessionUser implements Serializable {
     private String email;
     private String picture;
 
-    public SessionUser(User user) {
-        this.name = user.getName();
-        this.email = user.getEmail();
-        this.picture = user.getPicture();
+    public SessionUser(Users users) {
+        this.name = users.getName();
+        this.email = users.getEmail();
+        this.picture = users.getPicture();
     }
 }

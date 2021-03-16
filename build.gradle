@@ -32,7 +32,6 @@ repositories {
 }
 
 ext {
-    postgresVersion = '42.2.5'
     lombokVersion = '1.18.16'
 }
 
@@ -44,19 +43,19 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
     implementation "org.projectlombok:lombok:${lombokVersion}"
 
-    // postgresql
-    implementation "org.postgresql:postgresql:${postgresVersion}"
-
     // lombok dependency
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     testImplementation('org.springframework.security:spring-security-test')
 
     // inner db
-    compile('com.h2database:h2')
+//    compile('com.h2database:h2')
 
     // JDBC 설정
     compile('org.springframework.session:spring-session-jdbc')
+
+    // postgresql
+    compile('org.postgresql:postgresql')
 
     // Lombok 추가
     annotationProcessor("org.projectlombok:lombok")

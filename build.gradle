@@ -44,13 +44,12 @@ dependencies {
     implementation "org.projectlombok:lombok:${lombokVersion}"
 
     // lombok dependency
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     testImplementation('org.springframework.security:spring-security-test')
 
     // inner db
-    compile('com.h2database:h2')
+//    compile('com.h2database:h2')
 
     // JDBC 설정
     compile('org.springframework.session:spring-session-jdbc')

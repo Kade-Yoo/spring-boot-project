@@ -1,10 +1,11 @@
-<configuration scan="true">
+<configuration scan="true" scanPeriod="60">
     <springProfile name="local">
         <property resource="logback-local.properties"/>
     </springProfile>
     <springProfile name="real">
         <property resource="logback-real.properties"/>
     </springProfile>
+    <springProperty scope="context" name="LOG_LEVEL" source="logging.level.root"/>
 
     <!-- log file path -->
     <property name="LOG_PATH" value="${log.config.path}"/>

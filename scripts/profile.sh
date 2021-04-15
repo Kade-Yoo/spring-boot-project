@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function find_dile_profile() {
+function find_idle_profile() {
     RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code} http://location/profile")
 
     if [ ${RESPONSE_CODE} -ge 400  ]
@@ -20,8 +20,8 @@ function find_dile_profile() {
     echo "${IDLE_PROFILE}"
 }
 
-function find_dile_port() {
-    IDLE_PROFILE=$(find_dile_profile)
+function find_idle_port() {
+    IDLE_PROFILE=$(find_idle_profile)
 
     if [ ${IDLE_PROFILE} == real1 ]
     then

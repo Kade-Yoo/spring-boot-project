@@ -37,4 +37,6 @@ do
     echo "> 엔진엑스에 연결하지 않고 배포를 종료합니다."
     exit 1
   fi
+  echo " > Health 연결 실패 재시...도"
+  sleep 10
 done

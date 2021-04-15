@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 function find_dile_profile() {
     RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code} http://location/profile")

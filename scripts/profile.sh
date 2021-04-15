@@ -30,4 +30,5 @@ function find_idle_port() {
     else
       echo "8082"
     fi
+    echo "요기까지?"
 }

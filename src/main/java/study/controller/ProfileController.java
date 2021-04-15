@@ -20,7 +20,8 @@ public class ProfileController {
         List<String> realProfiles = Arrays.asList("real", "real1", "real2");
         String defaultProfile = profiles.isEmpty() ? "default" : profiles.get(0);
 
-        System.out.println(defaultProfile);
+        System.out.println("Profiles : " + profiles);
+        System.out.println("DefaultFile : " + defaultProfile);
         // 리스트에서 realProfiles목록을 포함하고 있다면 출력
         return profiles.stream().filter(realProfiles::contains).findAny().orElse(defaultProfile);
     }

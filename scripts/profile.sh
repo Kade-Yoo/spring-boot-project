@@ -3,13 +3,14 @@
 function find_idle_profile() {
     RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/profile)
 
-    if [ ${RESPONSE_CODE} -ge 400 ];
+    if [ "${RESPONSE_CODE}" -ge 400 ];
     then
       CURRENT_PROFILE=real2
     else
       CURRENT_PROFILE=$(curl -s http://localhost/profile)
     fi
 
+    echo "부도님 덕 $CURRENT_PROFILE"
     if [ "${CURRENT_PROFILE}" = "real1" ];
     then
       IDLE_PROFILE=real2

@@ -10,8 +10,9 @@ study/web/dto/HelloResponseDto.java
  study.web.dto.HelloResponseDto
 study/domain/user/Role.java
  study.domain.user.Role
-study/config/auth/SecurityConfig.java
- study.config.auth.SecurityConfig
+study/web/dto/PostsSaveRequestDto.java
+ study.web.dto.PostsSaveRequestDto
+ study.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
 study/dto/HelloDto.java
  study.dto.HelloDto
 study/config/interceptor/LoginInterceptor.java
@@ -54,6 +55,7 @@ study/config/web/WebConfig.java
 study/dto/Users.java
  study.dto.Users
  study.dto.Users$UsersBuilder
-study/web/dto/PostsSaveRequestDto.java
- study.web.dto.PostsSaveRequestDto
- study.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
+study/controller/ProfileController.java
+ study.controller.ProfileController
+study/config/auth/SecurityConfig.java
+ study.config.auth.SecurityConfig

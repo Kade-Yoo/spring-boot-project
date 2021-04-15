@@ -10,7 +10,7 @@ function find_idle_profile() {
       CURRENT_PROFILE=$(curl -s http://localhost/profile)
     fi
 
-    echo "부도님 덕 $CURRENT_PROFILE"
+    echo "현재 profile $CURRENT_PROFILE"
     if [ "${CURRENT_PROFILE}" = "real1" ];
     then
       IDLE_PROFILE=real2
@@ -18,7 +18,7 @@ function find_idle_profile() {
       IDLE_PROFILE=real1
     fi
 
-    echo "${IDLE_PROFILE}"
+    echo "사용 가능한 Profile ${IDLE_PROFILE}"
 }
 
 function find_idle_port() {

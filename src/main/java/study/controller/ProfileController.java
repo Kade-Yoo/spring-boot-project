@@ -17,7 +17,7 @@ public class ProfileController {
     @GetMapping("/profile")
     public String profile() {
         List<String> profiles = Arrays.asList(env.getActiveProfiles());
-        List<String> realProfiles = Arrays.asList("real", "real2", "real2");
+        List<String> realProfiles = Arrays.asList("real", "real1", "real2");
         String defaultProfile = profiles.isEmpty() ? "default" : profiles.get(0);
 
         // 리스트에서 realProfiles목록을 포함하고 있다면 출력

@@ -18,7 +18,7 @@ do
   echo " > $IDLE_PORT"
   echo " http://localhost:${IDLE_PORT}/profile"
   RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
-  UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -1)
+  UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l)
 
   echo "2번"
   if [ ${UP_COUNT} -ge 1 ]

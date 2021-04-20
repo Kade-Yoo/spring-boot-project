@@ -22,7 +22,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group 'com.spring.boot'
-version '1.0-SNAPSHOT'
+version '1.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 //.java 컴파일 시 버전을 몇으로 할 것인지 나타냄
 sourceCompatibility = 1.8
 // targetCompatibility > VM 버전에 따라 .class파일을 생성
